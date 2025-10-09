@@ -1,0 +1,4 @@
+{"majorRadius":2.0,"minorRadius":2.0}
+{"majorRadius":5.0,"minorRadius":10.0}
+{"width":10.0,"height":20.0}
+{"width":10.0,"height":10.0}

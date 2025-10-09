@@ -1,0 +1,34 @@
+package shape;
+
+import util.Validator;
+
+public class Circle implements Shape {
+	
+	private float radius;
+	
+	public Circle(float radius) {	
+		this.setRadius(radius);
+	}
+	
+	public float getRadius() {
+		return this.radius;
+	}
+	
+	public void setRadius(float value) {
+		
+		Validator.absolute(value);
+		this.radius = value;
+	}
+
+	@Override
+	public float area() {
+		
+		return (float)(Math.PI * radius * radius);
+	}
+
+	@Override
+	public float perimeter() {
+		
+		return (float)(2 * Math.PI * radius);
+	}
+}
