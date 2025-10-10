@@ -1,8 +1,13 @@
 package app;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import shape.Shape;
 import shape.ShapeFactory.ShapeType;
@@ -83,7 +88,21 @@ public class AppShapes {
 	}
 
 	private void saveToFile() {
-		throw new RuntimeException("Save To File - Unsuported!");
+		
+		System.out.print("Digite o local e nome do arquivo para salvar as formas (ex: shapes.json): ");
+		String filePath = scanner.nextLine();
+		
+		Gson gson = new GsonBuilder().setPrettyPrinting().create();
+		
+		try (FileWriter writer = new FileWriter(filePath)) {
+			
+			gson.toJson(shapes, writer);
+			
+			showMessage(MessageType.INFORMATION, "Formas salvas com sucesso em: " + filePath);
+			
+		} catch (IOException e) {
+			showMessage(MessageType.ERROR, "Erro ao salvar as formas. Verifique o caminho e permissões: " + e.getMessage());
+		}
 	}
 
 	private void readFromFile() {
