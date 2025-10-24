@@ -1,4 +1,0 @@
-{"majorRadius":5.0,"minorRadius":5.0}
-{"width":2.0,"height":3.5}
-{"sideA":3.0,"sideB":4.0,"sideC":5.0}
-{"width":0.0,"height":0.0}
